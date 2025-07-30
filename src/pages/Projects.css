@@ -1,0 +1,27 @@
+.projects{ background: var(--bg); color: var(--text); }
+
+/* .projects-head{
+  padding: 24px 0 16px;
+} */
+.projects-head h1{
+  margin: 0;
+  font-size: clamp(28px, 4vw, 40px);
+}
+.lead{
+  margin: 8px 0 0;
+  color: var(--muted);
+  max-width: 720px;
+}
+
+.projects-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* Si tu veux 2 colonnes sur large écran, décommente : */
+/*
+@media (min-width: 900px){
+  .projects-grid{ grid-template-columns: 1fr 1fr; }
+}
+*/

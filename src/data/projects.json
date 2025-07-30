@@ -1,0 +1,32 @@
+[
+  {
+    "id": "flags-quiz",
+    "title": "Quiz de drapeaux",
+    "description": "App React/Vite avec timer, manches et feedbacks visuels. Intégration d’une API pays.",
+    "tags": ["React", "Vite", "API"],
+    "year": 2025,
+    "image": "/images/flags-quiz.png",
+    "links": { "demo": "#", "repo": "https://github.com/ton-user/flags-quiz" },
+    "featured": true
+  },
+  {
+    "id": "guess-country",
+    "title": "Guess the Country",
+    "description": "Jeu de géographie : 6 essais, indices dynamiques (population, surface, PIB…).",
+    "tags": ["React Router", "UX"],
+    "year": 2025,
+    "image": "/images/guess-country.png",
+    "links": { "demo": "#", "repo": "https://github.com/ton-user/guess-the-country" },
+    "featured": true
+  },
+  {
+    "id": "portfolio",
+    "title": "Portfolio personnel",
+    "description": "Site minimaliste pour présenter mon parcours, mes projets et mon CV.",
+    "tags": ["Frontend", "Design System"],
+    "year": 2025,
+    "image": "/images/portfolio.png",
+    "links": { "demo": "#", "repo": "https://github.com/ton-user/portfolio" },
+    "featured": false
+  }
+]

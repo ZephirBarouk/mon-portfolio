@@ -1,0 +1,40 @@
+/* Base : occuper 100% de la hauteur visible */
+html, body, #root{
+  height: 100%;
+}
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+
+/* <main> prend exactement la place restante sous la navbar sticky */
+.app-main{
+  height: calc(100dvh - var(--nav-h));
+  /* Pas de scroll sur la page entière */
+  overflow: hidden;
+
+  /* Mise en page par défaut : centre verticalement le contenu “sobrement” */
+  display: grid;
+  align-content: start;  /* top par défaut; remets 'center' si tu veux centrer verticalement */
+}
+
+/* Une “page” type : conteneur */
+.page{
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;  /* titre + contenu */
+  padding: 16px;
+}
+
+/* Si une page a beaucoup de contenu, scrolle à l’intérieur de la zone */
+.page-scroll{
+  min-height: 0;           /* indispensable pour permettre le scroll interne */
+  overflow: auto;
+}
+
+/* Exemple : un titre en haut, contenu qui s'adapte */
+.page header{
+  margin-bottom: 8px;
+}

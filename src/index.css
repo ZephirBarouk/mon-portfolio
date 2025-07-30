@@ -31,6 +31,8 @@ nav a:hover {
 }
 
 /* Pour que le contenu ne passe pas sous la navbar */
-main {
-  padding-top: 80px;
+main{
+  padding-top: var(--nav-h);
 }
+
+main > *:first-child { margin-top: 0; }

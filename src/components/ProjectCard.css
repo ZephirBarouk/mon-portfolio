@@ -1,0 +1,85 @@
+/* Utilise les variables déjà posées dans Home.css */
+.p-card{
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform .08s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.p-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.10);
+  border-color: rgba(99,102,241,.18);
+}
+
+.p-thumb{
+  background: var(--bg-muted);
+  height: 100%;
+}
+.p-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.p-thumb-placeholder{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #e5e7eb 0%, #f3f4f6 50%, #e5e7eb 100%);
+}
+
+.p-body{ padding: 16px 16px 18px 0; }
+
+.p-head{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.p-title{
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.p-year{
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.p-desc{
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.p-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.p-chip{
+  display: inline-flex;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 4px 10px;
+  font-size: .85rem;
+  border-radius: 999px;
+}
+
+.p-actions{
+  display: flex;
+  gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 700px){
+  .p-card{
+    grid-template-columns: 1fr;
+  }
+  .p-body{ padding: 14px; }
+}
