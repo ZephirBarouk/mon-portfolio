@@ -1,0 +1,92 @@
+/* Container global (même que Projects) */
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* UNE SEULE GRILLE POUR TOUTE LA PAGE */
+.about-grid{
+  display: grid;
+  grid-template-columns: 220px 1fr;   /* Col 1 = photo, Col 2 = texte */
+  gap: 24px;
+  padding: 16px 0;                    /* pas de padding latéral ici (géré par .container) */
+}
+
+/* Header sur toute la largeur de la grille */
+.about-head{
+  grid-column: 1 / -1;                /* span toutes les colonnes */
+  padding: 0;                         /* aucun padding horizontal supplémentaire */
+  text-align: left;
+}
+.about-head h1{
+  margin: 0;
+  font-size: clamp(28px, 4vw, 40px);  /* comme Projects */
+}
+.lead{
+  margin: 8px 0 0;
+  color: var(--muted);
+  max-width: 720px;
+}
+
+/* Colonne 1 : photo */
+.about-photo{
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-muted);
+  aspect-ratio: 1 / 1;
+}
+.about-photo img{
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+
+/* Colonne 2 : bio */
+.about-bio h2{ margin: 0 0 8px; font-size: 1.2rem; }
+.about-bio p{ margin: 0 0 10px; color: var(--muted); line-height: 1.6; }
+.about-actions{ display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+
+/* Sections qui suivent → plein largeur de la grille */
+.about-section{
+  grid-column: 1 / -1;
+  padding: 16px 0;
+}
+.about-section h2{ margin: 0 0 10px; font-size: 1.2rem; }
+
+/* Timeline */
+.timeline{ display: grid; gap: 10px; margin: 0; }
+.timeline dt{ font-weight: 700; }
+.timeline dd{ margin: 2px 0 0 0; color: var(--muted); }
+
+/* Skills */
+.skills{
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px;
+}
+.skills li{
+  text-align: center; padding: 10px 12px;
+  border: 1px solid var(--border); border-radius: 10px; background: var(--bg);
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .about-grid{
+    grid-template-columns: 1fr;       /* une seule colonne */
+  }
+  .about-photo{
+    max-width: 260px; width: 100%;
+    justify-self: center;
+  }
+  .skills{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+/* (Boutons si besoin) */
+.btn{
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px; padding: 10px 16px; border-radius: 10px; font-weight: 600;
+  text-decoration: none; border: 1px solid transparent; transition: transform .06s ease;
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn-primary{ background: var(--primary); color: #fff; box-shadow: var(--shadow); }
+.btn-secondary{ background: transparent; color: var(--text); border-color: var(--border); }

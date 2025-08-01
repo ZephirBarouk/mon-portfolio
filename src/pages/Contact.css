@@ -1,0 +1,75 @@
+/* 1) Empêche la 1ʳᵉ colonne de déborder (grille) */
+.contact-grid{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px; /* minmax(0,1fr) évite les débordements */
+  gap: 24px;
+  padding: 16px 0;
+}
+
+/* 2) La carte/formulaire ne laisse rien dépasser */
+.contact-form{
+  display: grid;
+  gap: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;             /* masque tout dépassement interne */
+}
+
+/* 3) Le bloc champ occupe toute la largeur du formulaire */
+.field{
+  display: grid;
+  gap: 6px;
+  width: 100%;
+}
+
+/* 4) Les inputs/textarea ne dépassent jamais et sont centrés dans leur "boîte" */
+.field input,
+.field textarea{
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;                  /* clé pour éviter les débordements en grid */
+  box-sizing: border-box;        /* padding inclus dans la largeur */
+  margin: 0 auto;                /* centre l'élément si la largeur < 100% (sécurité) */
+
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 10px;
+  outline: none;
+}
+
+/* 5) Ajustements utiles */
+.field textarea{
+  resize: vertical;              /* évite le resize horizontal */
+  max-height: 50vh;              /* reste contenu dans la carte */
+}
+
+@media (max-width: 900px){
+  .contact-grid{
+    grid-template-columns: 1fr;  /* une colonne, aucun risque de dépassement */
+  }
+}
+
+/* Centrer le bloc d'en-tête */
+.contact-head{
+  padding: 0;
+  text-align: center;
+}
+
+/* Centrer le h1 visuellement */
+.contact-head h1{
+  margin: 0 auto;              /* centre le bloc du titre */
+  font-size: clamp(28px, 4vw, 40px);
+}
+
+/* Centrer le sous-titre + même largeur max que partout */
+.contact-head .lead{
+  margin: 8px auto 0;          /* centre l’élément sous le h1 */
+  max-width: 720px;            /* largeur confortable */
+  text-align: center;          /* assure l’alignement du texte */
+}

@@ -17,7 +17,7 @@ export default function Home() {
           <div className="actions">
             <Link to="/projects" className="btn btn-primary">Voir mes projets</Link>
             <Link to="/about" className="btn btn-secondary">À propos</Link>
-            <a href="mailto:contact@example.com" className="link-ghost">Me contacter →</a>
+            <Link to="/contact" className="link-ghost">Me contacter →</Link>
           </div>
         </div>
       </section>
